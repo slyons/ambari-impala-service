@@ -6,7 +6,7 @@
 
 ```
 VERSION=`hdp-select status hadoop-client | sed 's/hadoop-client - \([0-9]\.[0-9]\).*/\1/'`
-sudo git clone https://github.com/shuhuai007/ambari-impala-service.git /var/lib/ambari-server/resources/stacks/HDP/$VERSION/services/IMPALA        
+sudo git clone https://github.com/elisska/ambari-impala-service.git /var/lib/ambari-server/resources/stacks/HDP/$VERSION/services/IMPALA        
 ```
 
 ##Restart Ambari
