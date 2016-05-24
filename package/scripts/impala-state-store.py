@@ -19,6 +19,10 @@ class StateStore(Script):
         Execute('echo "Running ' + cmd + '"')
         Execute(cmd)
 
+        cmd = 'apt-get update'
+        Execute('echo "Running ' + cmd + '"')
+        Execute(cmd)
+
         cmd = 'apt-get install -y impala-server impala-catalog impala-state-store impala-shell'
         Execute('echo "Running ' + cmd + '"')
         Execute(cmd)
