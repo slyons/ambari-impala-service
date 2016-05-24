@@ -13,14 +13,13 @@ class ImpalaDaemon(Script):
         # Install packages listed in metainfo.xml
         self.install_packages(env)
 
-        cmd = 'yum-config-manager --add-repo  ' \
-              'http://archive.cloudera.com/cdh5/redhat/6/x86_64/cdh/cloudera-cdh5.repo'
+        cmd = 'wget http://archive.cloudera.com/impala/ubuntu/precise/amd64/impala/cloudera.list ' \
+              '-O /etc/apt/sources.list.d/cloudera.list '
 
         Execute('echo "Running ' + cmd + '"')
         Execute(cmd)
 
-
-        cmd = 'yum -y install  impala-server impala-catalog impala-state-store impala-shell'
+        cmd = 'apt-get install -y impala-server impala-catalog impala-state-store impala-shell'
         Execute('echo "Running ' + cmd + '"')
         Execute(cmd)
 
