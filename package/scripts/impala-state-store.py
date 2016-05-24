@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import sys, os, pwd, signal, time
 from resource_management import *
 from resource_management.core.base import Fail
