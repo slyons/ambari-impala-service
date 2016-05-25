@@ -108,15 +108,22 @@
               </osSpecific>
               
             </osSpecifics>
+
+            <requiredServices>
+              <service>HDFS</service>
+            </requiredServices>
+
       	    <configuration-dependencies>
 	             <config-type>impala-ambari-config</config-type>
                <config-type>impala-env</config-type>
-               <config-type>impala-default</config-type>	   
+               <config-type>impala-default</config-type>
+               <config-type>hive-env</config-type>
+               <config-type>hdfs-site</config-type>
+               <config-type>hadoop-env</config-type>
+               <config-type>core-site</config-type>  
       	    </configuration-dependencies>
         </service>
 
-        <requiredServices>
-          <service>HDFS</service>
-        </requiredServices>
+        
     </services>
 </metainfo>
