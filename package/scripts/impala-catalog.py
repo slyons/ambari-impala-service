@@ -23,7 +23,7 @@ class ImpalaCatalog(Script):
         Execute('echo "Running ' + cmd + '"')
         Execute(cmd)
 
-        cmd = 'apt-get install -y --forced-yes impala-server impala-catalog impala-state-store impala-shell'
+        cmd = 'apt-get install -y --force-yes impala-server impala-catalog impala-state-store impala-shell'
         Execute('echo "Running ' + cmd + '"')
         Execute(cmd)
 
