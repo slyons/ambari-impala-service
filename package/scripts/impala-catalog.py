@@ -38,9 +38,9 @@ class ImpalaCatalog(Script):
     #Call start.sh to start the service
     def start(self, env):
         cmd = 'cp /etc/impala/conf/impala.defaults /etc/default/impala'
-        Execute('echo "Running cmd: ' + cmd + '"')
-        Execute(cmd)
-        
+        #Execute('echo "Running cmd: ' + cmd + '"')
+        #Execute(cmd)
+
         cmd = 'service impala-catalog start'
         Execute('echo "Running cmd: ' + cmd + '"')
         Execute(cmd)
