@@ -14,7 +14,7 @@ fi
 
 mkdir $TEMP_DIR
 
-curl -L https://github.com/slyons/ambari-impala-service/tarball/0.1 > $TEMP_DIR/impalaservice.tar
+curl -L https://github.com/slyons/ambari-impala-service/archive/master.tar.gz > $TEMP_DIR/impalaservice.tar
 tar xvf $TEMP_DIR/impalaservice.tar -C $TEMP_DIR --strip-components=1
 
 if [ -e $SERVICEDIR ]; then
@@ -28,5 +28,11 @@ if [ -e $SERVICECACHE ]; then
     rm -r $SERVICECACHE
 fi
 cp -R $TEMP_DIR $SERVICECACHE
+
+fullHostName=$(hostname -f)
+echo "fullHostName=$fullHostName"
+if [[ $fullHostName = headnode0* || $fullHostName = hn0* ]]; then
+    service ambari-server restart
+fi
 
 echo "Done, ready to install through Ambari UI"
