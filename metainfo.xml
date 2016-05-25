@@ -11,8 +11,7 @@
                 <component>
                   <name>IMPALA_STATE_STORE</name>
                   <displayName>Impala_State_Store</displayName>
-                  <category>MASTER</category>
-                  <cardinality>1</cardinality>
+                  <category>SLAVE</category>
                   <commandScript>
                     <script>scripts/impala-state-store.py</script>
                     <scriptType>PYTHON</scriptType>
@@ -23,8 +22,7 @@
                 <component>
                   <name>IMPALA_CATALOG_SERVICE</name>
                   <displayName>Impala_Catalog_Service</displayName>
-                  <category>MASTER</category>
-                  <cardinality>1</cardinality>
+                  <category>SLAVE</category>
                   <commandScript>
                     <script>scripts/impala-catalog.py</script>
                     <scriptType>PYTHON</scriptType>
