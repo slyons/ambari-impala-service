@@ -6,7 +6,7 @@
             <name>IMPALA</name>
             <displayName>Impala</displayName>
             <comment>impala config</comment>
-            <version>0.10.0</version>
+            <version>0.11</version>
             <components>
                 <component>
                   <name>IMPALA_STATE_STORE</name>
