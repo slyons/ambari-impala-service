@@ -6,7 +6,7 @@
             <name>IMPALA</name>
             <displayName>Impala</displayName>
             <comment>impala config</comment>
-            <version>0.11</version>
+            <version>0.11.1</version>
             <components>
                 <component>
                   <name>IMPALA_STATE_STORE</name>
@@ -43,6 +43,21 @@
                     <scriptType>PYTHON</scriptType>
                     <timeout>10000</timeout>
                   </commandScript>
+                  <dependencies>
+                    <dependency>
+                      <name>HDFS/HDFS_CLIENT</name>
+                      <scope>host</scope>
+                      <auto-deploy>
+                        <enabled>true</enabled>
+                      </auto-deploy>
+                    </dependency>
+                    <dependency>
+                      <name>HIVE/HIVE_METASTORE</name>
+                      <scope>cluster</scope>
+                      <auto-deploy>
+                        <enabled>true</enabled>
+                      </auto-deploy>
+                    </dependency>
                 </component>
 
                 <component>
@@ -54,6 +69,28 @@
                     <scriptType>PYTHON</scriptType>
                     <timeout>10000</timeout>
                   </commandScript>
+                  <configFiles>
+                    <configFile>
+                      <type>env</type>
+                      <fileName>impala.defaults</fileName>
+                      <dictionaryName>impala-default</dictionaryName>
+                    </configFile>
+                  </configFiles>
+                  <dependencies>
+                    <dependency>
+                      <name>HDFS/HDFS_CLIENT</name>
+                      <scope>host</scope>
+                      <auto-deploy>
+                        <enabled>true</enabled>
+                      </auto-deploy>
+                    </dependency>
+                    <dependency>
+                      <name>HIVE/HIVE_METASTORE</name>
+                      <scope>cluster</scope>
+                      <auto-deploy>
+                        <enabled>true</enabled>
+                      </auto-deploy>
+                    </dependency>
                 </component>
             </components>
 
@@ -69,8 +106,14 @@
               
             </osSpecifics>
       	    <configuration-dependencies>
-	      <config-type>impala-ambari-config</config-type>      	   
+	             <config-type>impala-ambari-config</config-type>
+               <config-type>impala-env</config-type>
+               <config-type>impala-default</config-type>	   
       	    </configuration-dependencies>
         </service>
+
+        <requiredServices>
+          <service>HDFS</service>
+        </requiredServices>
     </services>
 </metainfo>
