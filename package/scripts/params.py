@@ -33,5 +33,5 @@ config = Script.get_config()
 impala_user = config['configurations']['impala-env']['impala_user']
 impala_group = config['configurations']['impala-env']['impala_group']
 impala_log_dir = config['configurations']['impala-env']['impala_log_dir']
-impala_defaults_content = config['configurations']['impala-defaut']['content']
+impala_defaults_content = config['configurations']['impala-default']['content']
 impala_log_file = os.path.join(impala_log_dir,'impala-setup.log')
