@@ -34,12 +34,12 @@ class ImpalaDaemon(Script):
 
         env.set_params(params)
 
+        env_content = InlineTemplate(params.impala_defaults_content)
+        File("/etc/default/impala", content=env_content, owner=params.impala_user, group=params.impala_group)
+
 
     #Call start.sh to start the service
     def start(self, env):
-        cmd = 'cp /etc/impala/conf/impala.defaults /etc/default/impala'
-        #Execute('echo "Running cmd: ' + cmd + '"')
-        #Execute(cmd)
 
         cmd = 'service impala-server start'
         Execute('echo "Running cmd: ' + cmd + '"')

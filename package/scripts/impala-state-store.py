@@ -42,10 +42,6 @@ class StateStore(Script):
 
         self.create_hdfs_user(params.impala_user)
 
-        cmd = 'cp /etc/impala/conf/impala.defaults /etc/default/impala'
-        #Execute('echo "Running cmd: ' + cmd + '"')
-        #Execute(cmd)
-
         cmd = 'service impala-state-store start'
         Execute('echo "Running cmd: ' + cmd + '"')
         Execute(cmd)
