@@ -10,6 +10,12 @@
     </property>
 
     <property>
+        <name>impala_conf_dir</name>
+        <value>/etc/impala/conf</value>
+        <description>Destination for all required config files for Impala</description>
+    </property>
+
+    <property>
         <name>impala_user</name>
         <value>impala</value>
         <property-type>USER</property-type>

@@ -29,11 +29,14 @@ ENABLE_CORE_DUMPS=false
 # IMPALA_HOME=/usr/lib/impala
 # HIVE_HOME=/usr/lib/hive
 # HBASE_HOME=/usr/lib/hbase
-# HBASE_CONF_DIR=/etc/impala/conf
 
+HBASE_CONF_DIR=/etc/impala/conf
 IMPALA_CONF_DIR=/etc/impala/conf
 HIVE_CONF_DIR=/etc/impala/conf
 HADOOP_CONF_DIR=/etc/impala/conf
+
+# Set hadoop classpath
+CLASSPATH=$(hadoop classpath):$CLASSPATH
 
         </value>
         <value-attributes>
