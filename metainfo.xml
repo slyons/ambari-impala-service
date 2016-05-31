@@ -106,7 +106,17 @@
                    <package><name>apache-maven-3.2*</name></package>                                           
                 </packages>
               </osSpecific>
-              
+              <osSpecific>
+                <osFamily>debian7,ubuntu12,ubuntu14</osFamily>
+                <packages>
+                  <package>
+                    <name>git</name>
+                  </package>
+                  <package>
+                    <name>openjdk-7-jre-headless</name>
+                  </package>
+                </packages>
+              </osSpecific>
             </osSpecifics>
 
             <requiredServices>

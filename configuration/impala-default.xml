@@ -37,7 +37,7 @@ HADOOP_CONF_DIR=/etc/impala/conf
 
 # Set hadoop classpath
 CLASSPATH=$(hadoop classpath):$CLASSPATH
-
+JAVA_HOME=/usr/lib/jvm/java-7-openjdk-amd64
         </value>
         <value-attributes>
             <type>content</type>
